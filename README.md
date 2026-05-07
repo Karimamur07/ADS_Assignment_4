@@ -119,6 +119,22 @@ Why is DFS faster in these experiments?
 
 E. Screenshots
 
+1.Figure 1: Graph Structure (Adjacency List)
+
+<img width="411" height="276" alt="image" src="https://github.com/user-attachments/assets/8431dd2e-7e92-4e99-bc7a-3fa1d7024e3f" />
+
+2.Figure 2: BFS Traversal Output
+
+<img width="519" height="25" alt="image" src="https://github.com/user-attachments/assets/512b939f-84fb-44e6-9c8f-f667540afdff" />
+
+3.Figure 3: DFS Traversal Output
+
+<img width="518" height="20" alt="image" src="https://github.com/user-attachments/assets/3db773b1-b14a-4242-bfce-3b407e5323ce" />
+
+4.Figure 4: Performance Results Table
+
+<img width="487" height="174" alt="image" src="https://github.com/user-attachments/assets/9cbfdb17-6e10-47f4-8795-bc29dfcdecba" />
+
 F. Reflection Section
 
 ### What I Learned About Graph Traversal
