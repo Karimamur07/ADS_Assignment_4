@@ -41,7 +41,7 @@ Advantages of adjacency list: efficient memory usage (O(V+E) space), fast iterat
 
 C. Algorithm Descriptions
 
-### BFS (Breadth-First Search)
+BFS (Breadth-First Search)
 
 Step-by-step explanation:
 
@@ -65,7 +65,7 @@ Time Complexity: O(V + E) – each vertex and edge is processed once.
 
 
 
-### DFS (Depth-First Search)
+DFS (Depth-First Search)
 
 Step-by-step explanation:
 
