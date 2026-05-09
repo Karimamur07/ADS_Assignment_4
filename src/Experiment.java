@@ -1,13 +1,9 @@
 import java.util.List;
 
-/**
- * Class for measuring BFS and DFS performance on graphs of different sizes.
- */
+
 public class Experiment {
 
-    /**
-     * Runs both traversals on the given graph starting from vertex 0.
-     */
+
     public void runTraversals(Graph g, boolean printOrder) {
         int start = 0;
 
@@ -32,10 +28,7 @@ public class Experiment {
         System.out.printf("DFS Time: %d ns%n", dfsDuration);
     }
 
-    /**
-     * Creates a test graph with n vertices.
-     * Edges: i connected to i+1 and i+2 (if exists).
-     */
+
     public Graph createTestGraph(int n) {
         Graph g = new Graph();
         for (int i = 0; i < n; i++) {
@@ -48,9 +41,7 @@ public class Experiment {
         return g;
     }
 
-    /**
-     * Runs experiments for graph sizes: 10, 30, 100.
-     */
+
     public void runMultipleTests() {
         int[] sizes = {10, 30, 100};
         System.out.println("=== Experiments: Effect of Graph Size on Performance ===");
@@ -79,9 +70,7 @@ public class Experiment {
         }
     }
 
-    /**
-     * Prints detailed results for a single graph.
-     */
+
     public void printResults(Graph g) {
         System.out.println("=== Detailed Output for Small Graph ===");
         g.printGraph();

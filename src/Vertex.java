@@ -1,6 +1,4 @@
-/**
- * Class representing a graph vertex.
- */
+
 public class Vertex {
     private final int id;
 

@@ -1,6 +1,4 @@
-/**
- * Класс, представляющий ребро между двумя вершинами.
- */
+
 public class Edge {
     private final Vertex source;
     private final Vertex destination;
