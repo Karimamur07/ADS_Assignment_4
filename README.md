@@ -116,6 +116,31 @@ Why is DFS faster in these experiments?
 1. Queue overhead – BFS uses LinkedList as a queue, which involves more object allocations
 2. Recursion advantage – DFS uses the native call stack (faster than heap-allocated queue)
 3. Graph structure – The graph is chain-like (i-i+1 and i-i+2), which favors DFS deep traversal
+# Graph Algorithms Project
+
+## Bonus Task: Dijkstra's Algorithm (Shortest Path)
+
+### Task Description
+Implement Dijkstra's Algorithm to find the shortest path from a starting vertex to all other vertices in a **weighted graph**.
+
+#### Data Structures Used
+- **Adjacency List with weights**: `Map<Integer, List<Neighbor>>` where `Neighbor` stores `(vertexId, weight)`
+- **Distance array**: `Map<Integer, Integer>` for storing shortest distances
+- **Visited set**: `Set<Integer>` for tracking processed vertices
+- **Previous map**: `Map<Integer, Integer>` for path reconstruction
+
+#### Algorithm Steps
+1. Initialize distances to `INFINITY`, starting vertex distance = 0
+2. While unvisited vertices exist:
+   - Select unvisited vertex with minimum distance
+   - Mark it as visited
+   - Relax all edges from this vertex (update distances if shorter path found)
+3. Print results with distances and reconstructed paths
+
+#### Complexity
+- **Time**: O(V²) with simple array/loop (no priority queue)
+- **Space**: O(V + E)
+
 
 E. Screenshots
 
