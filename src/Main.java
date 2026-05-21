@@ -3,12 +3,14 @@ public class Main {
         Experiment exp = new Experiment();
 
 
-        System.out.println("=".repeat(70));
+        exp.testDijkstra();
+
+        System.out.println("\n" + "=".repeat(70) + "\n");
+
         Graph smallGraph = exp.createTestGraph(10);
         exp.printResults(smallGraph);
 
         System.out.println("\n" + "=".repeat(70) + "\n");
-
 
         exp.runMultipleTests();
     }
