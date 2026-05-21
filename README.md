@@ -177,7 +177,7 @@ Recursive DFS can cause stack overflow on deep graphs. Also, DFS does NOT find s
 
 
 
-## Bonus Task: Dijkstra's Algorithm (Shortest Path)
+# Bonus Task: Dijkstra's Algorithm (Shortest Path)
 
 ### Task Description
 Implement Dijkstra's Algorithm to find the shortest path from a starting vertex to all other vertices in a **weighted graph**.
@@ -240,7 +240,7 @@ Screenshots
 
 <img width="486" height="205" alt="image" src="https://github.com/user-attachments/assets/9e6ff703-74e2-43ec-a06f-45bf3a50d5dd" />
 
-## What I Learned
+What I Learned
 
 - Dijkstra's algorithm guarantees the shortest path only when all edge weights are non‑negative. My implementation works correctly for the test graphs provided.
 
