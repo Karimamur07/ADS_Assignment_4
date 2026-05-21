@@ -189,12 +189,30 @@ Implement Dijkstra's Algorithm to find the shortest path from a starting vertex 
 - **Previous map**: `Map<Integer, Integer>` for path reconstruction
 
 #### Algorithm Steps
-1. Initialize distances to `INFINITY`, starting vertex distance = 0
-2. While unvisited vertices exist:
-   - Select unvisited vertex with minimum distance
-   - Mark it as visited
-   - Relax all edges from this vertex (update distances if shorter path found)
-3. Print results with distances and reconstructed paths
+
+**Initialization:**
+- Set distance to start vertex = 0
+- Set distance to all other vertices = ∞ (infinity)
+- Create a `visited` set (empty initially)
+- Create a `previous` map to remember the shortest path tree
+
+**Main Loop (repeat until all vertices are visited):**
+1. Find the unvisited vertex with the smallest distance
+2. Mark it as visited
+3. **Relaxation:** For each neighbor of this vertex:
+   - Calculate `newDistance = currentDistance + edgeWeight`
+   - If `newDistance < neighbor's current distance`:
+     - Update neighbor's distance to `newDistance`
+     - Record the path: `previous[neighbor] = currentVertex`
+
+**Path Reconstruction (after the loop):**
+- For any target vertex, follow `previous` backwards from target to start
+- Reverse the sequence to get the shortest path
+- If distance is ∞, print "NOT REACHABLE"
+
+**Output:**
+- Print shortest distance and full path for each vertex
+
 
 #### Complexity
 - **Time**: O(V²) with simple array/loop (no priority queue)
@@ -211,11 +229,21 @@ Implement Dijkstra's Algorithm to find the shortest path from a starting vertex 
 
 Screenshots
 1.Figure 1: Output of Dijkstra's algorithm showing shortest distances and paths from vertex V0 to all other vertices in the weighted graph.
+
 <img width="518" height="239" alt="image" src="https://github.com/user-attachments/assets/ba702fda-eacb-47ec-ad67-694970f41403" />
 
 2.Figure 2: Adjacency list representation of the weighted graph, displaying each vertex connected to its neighbors with corresponding edge weights.
+
 <img width="304" height="210" alt="image" src="https://github.com/user-attachments/assets/9875413f-880b-479d-888f-c76d399263e2" />
 
 3.Figure 3: Dijkstra's algorithm execution starting from vertex V3, confirming correct functionality for any source vertex in the graph.
+
 <img width="486" height="205" alt="image" src="https://github.com/user-attachments/assets/9e6ff703-74e2-43ec-a06f-45bf3a50d5dd" />
 
+## What I Learned
+
+- Dijkstra's algorithm guarantees the shortest path only when all edge weights are non‑negative. My implementation works correctly for the test graphs provided.
+
+- The O(V²) version (without a priority queue) is simpler to understand and sufficient for small graphs (up to ~1000 vertices). For larger graphs, a priority queue would be necessary.
+
+- Path reconstruction is a valuable pattern — storing "where I came from" allows tracing the route backwards and reversing it.
