@@ -116,31 +116,6 @@ Why is DFS faster in these experiments?
 1. Queue overhead – BFS uses LinkedList as a queue, which involves more object allocations
 2. Recursion advantage – DFS uses the native call stack (faster than heap-allocated queue)
 3. Graph structure – The graph is chain-like (i-i+1 and i-i+2), which favors DFS deep traversal
-# Graph Algorithms Project
-
-## Bonus Task: Dijkstra's Algorithm (Shortest Path)
-
-### Task Description
-Implement Dijkstra's Algorithm to find the shortest path from a starting vertex to all other vertices in a **weighted graph**.
-
-#### Data Structures Used
-- **Adjacency List with weights**: `Map<Integer, List<Neighbor>>` where `Neighbor` stores `(vertexId, weight)`
-- **Distance array**: `Map<Integer, Integer>` for storing shortest distances
-- **Visited set**: `Set<Integer>` for tracking processed vertices
-- **Previous map**: `Map<Integer, Integer>` for path reconstruction
-
-#### Algorithm Steps
-1. Initialize distances to `INFINITY`, starting vertex distance = 0
-2. While unvisited vertices exist:
-   - Select unvisited vertex with minimum distance
-   - Mark it as visited
-   - Relax all edges from this vertex (update distances if shorter path found)
-3. Print results with distances and reconstructed paths
-
-#### Complexity
-- **Time**: O(V²) with simple array/loop (no priority queue)
-- **Space**: O(V + E)
-
 
 E. Screenshots
 
@@ -199,3 +174,48 @@ BFS is preferred when finding the shortest path (in unweighted graphs), when the
 
 What are the limitations of DFS?
 Recursive DFS can cause stack overflow on deep graphs. Also, DFS does NOT find shortest paths – it finds any path, not necessarily the optimal one.
+
+
+
+## Bonus Task: Dijkstra's Algorithm (Shortest Path)
+
+### Task Description
+Implement Dijkstra's Algorithm to find the shortest path from a starting vertex to all other vertices in a **weighted graph**.
+
+#### Data Structures Used
+- **Adjacency List with weights**: `Map<Integer, List<Neighbor>>` where `Neighbor` stores `(vertexId, weight)`
+- **Distance array**: `Map<Integer, Integer>` for storing shortest distances
+- **Visited set**: `Set<Integer>` for tracking processed vertices
+- **Previous map**: `Map<Integer, Integer>` for path reconstruction
+
+#### Algorithm Steps
+1. Initialize distances to `INFINITY`, starting vertex distance = 0
+2. While unvisited vertices exist:
+   - Select unvisited vertex with minimum distance
+   - Mark it as visited
+   - Relax all edges from this vertex (update distances if shorter path found)
+3. Print results with distances and reconstructed paths
+
+#### Complexity
+- **Time**: O(V²) with simple array/loop (no priority queue)
+- **Space**: O(V + E)
+
+#### Files Modified
+| File | Changes |
+|------|---------|
+| `Edge.java` | Added `weight` field and getter method |
+| `Graph.java` | Added `Neighbor` inner class, `addEdge()` with weight, `dijkstra()` method, path reconstruction |
+| `Experiment.java` | Added `createWeightedTestGraph()` and `testDijkstra()` |
+| `Main.java` | Integrated Dijkstra test execution |
+
+
+Screenshots
+1.Figure 1: Output of Dijkstra's algorithm showing shortest distances and paths from vertex V0 to all other vertices in the weighted graph.
+<img width="518" height="239" alt="image" src="https://github.com/user-attachments/assets/ba702fda-eacb-47ec-ad67-694970f41403" />
+
+2.Figure 2: Adjacency list representation of the weighted graph, displaying each vertex connected to its neighbors with corresponding edge weights.
+<img width="304" height="210" alt="image" src="https://github.com/user-attachments/assets/9875413f-880b-479d-888f-c76d399263e2" />
+
+3.Figure 3: Dijkstra's algorithm execution starting from vertex V3, confirming correct functionality for any source vertex in the graph.
+<img width="486" height="205" alt="image" src="https://github.com/user-attachments/assets/9e6ff703-74e2-43ec-a06f-45bf3a50d5dd" />
+
